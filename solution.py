@@ -9,11 +9,7 @@ def getLeftSubstring(s, u):
 
 def shortestSubstring(s):
     u = ''.join(sorted(list(set(s))))
-    ls = getLeftSubstring(s, u)
-    v = ''.join(reversed(ls))
-    rs = getLeftSubstring(v, u)
-    r = ''.join(reversed(rs))
-    return r
+    return ''.join(reversed(getLeftSubstring(''.join(reversed(getLeftSubstring(s, u))), u)))
 
 
 arr = "accbeddbcaffcaedbadec"
